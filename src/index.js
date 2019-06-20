@@ -2,8 +2,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// styles
-import './index.css';
 
 // Routing & Links
 import { BrowserRouter } from 'react-router-dom';
