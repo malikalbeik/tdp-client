@@ -10,6 +10,8 @@ import rootReducer from './reducers'
 // Local Storage
 import { loadState, saveState } from './localStorage';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 // Routing & Links
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
