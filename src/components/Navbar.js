@@ -9,7 +9,8 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem
+  NavItem,
+  Input
 } from 'reactstrap';
 
 // Styled Components
@@ -72,6 +73,7 @@ class Bar extends Component {
                     </Item>
                   ))
                 }
+                <SearchInput placeholder="Search" />
               </Nav>
             </Collapse>
           </StyledNavbar>
@@ -140,6 +142,20 @@ const Item = styled(NavItem)`
     padding: 10px;
     border-radius: 8px;
     background-color: ${props => props.theme.colors.inner_background};
+  }
+`
+
+const SearchInput = styled(Input)`
+  padding-left: 4px;
+  margin-left: 15px;
+  background-color: white !important;
+  border: none;
+  &:focus {
+    background-color: ${props => props.theme.colors.inner_background};
+    outline: none;
+  }
+  @media (${sm}) {
+    margin-left: 0px;
   }
 `
 
