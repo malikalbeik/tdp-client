@@ -18,7 +18,6 @@ import {sm} from '../breakpoints';
 
 // Components
 import NavLink from './NavLink';
-import ThemeSwitch from './ThemeSwitch';
 
 // Links
 import {navbarLinks} from '../links';
@@ -73,7 +72,6 @@ class Bar extends Component {
                     </Item>
                   ))
                 }
-                <SwitchItem><ThemeSwitch/></SwitchItem>
               </Nav>
             </Collapse>
           </StyledNavbar>
@@ -142,15 +140,6 @@ const Item = styled(NavItem)`
     padding: 10px;
     border-radius: 8px;
     background-color: ${props => props.theme.colors.inner_background};
-  }
-`
-
-const SwitchItem = styled(Item)`
-  padding-top: 2px;
-  background-color: ${props => props.theme.colors.inner_background};
-  @media (${sm}) {
-    margin: 12px 0 0 0;
-    padding: 4px 26px 10px 6px;
   }
 `
 

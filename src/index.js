@@ -9,7 +9,7 @@ import rootReducer from './reducers'
 
 // Local Storage
 import { loadState, saveState } from './localStorage';
-
+import Light from './thems';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Routing & Links
@@ -27,7 +27,7 @@ const store = createStore(rootReducer, persistedState, reduxDevTools);
 store.subscribe(_ => {
     saveState({
         ...store.getState(),
-        theme: store.getState().theme
+        theme: Light
     });
 });
 

@@ -16,12 +16,11 @@ import Navbar from './components/Navbar';
 import { withRouter } from 'react-router-dom';
 
 // Themes
-import { getTheme } from './thems';
+import Light from './thems';
 
 class App extends Component {
   render() {
-    const info = this.props.theme;
-    const theme = getTheme(info);
+    const theme = Light;
     document.body.style.backgroundColor = theme.colors.background;
 
     return (
