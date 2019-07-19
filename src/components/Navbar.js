@@ -30,9 +30,33 @@ class Bar extends Component {
     super(props);
 
     this.toggle = this.toggle.bind(this);
+    this.listenScrollEvent = this.listenScrollEvent.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      Color: props => props.theme.colors.primary,
+      BackgroundColor: 'none'
     };
+  }
+
+  // Add an event listeneer to change headers colors.
+  componentDidMount() {
+    window.addEventListener('scroll', this.listenScrollEvent)
+  }
+
+  // Change header colors when scrolling.
+  listenScrollEvent = e => {
+    if (window.scrollY > 50) {
+      this.setState({
+        Color: props => props.theme.colors.primary,
+        BackgroundColor: props => props.theme.colors.inner_background,
+      })
+    } else {
+      this.setState({
+        Color: props => props.theme.colors.scroll,
+        BackgroundColor: 'none',
+
+      })
+    }
   }
 
   open() {
@@ -57,7 +81,7 @@ class Bar extends Component {
     const {menu} = this.props.theme.icons;
 
     return (
-      <Wrapper>
+      <Wrapper BackgroundColor={this.state.BackgroundColor}>
         <Container>
           <StyledNavbar expand="md">
             <Brand href='/'>TDP</Brand>
@@ -68,7 +92,7 @@ class Bar extends Component {
               <Nav navbar className="ml-auto">
                 {
                   navbarLinks.map(l => (
-                    <Item key={l.name}>
+                    <Item key={l.name} Color={this.state.Color}>
                       <NavLink activeClassName='active' exact to={l.url} onClick={_ => {this.close()}}>{l.name}</NavLink>
                     </Item>
                   ))
@@ -84,16 +108,16 @@ class Bar extends Component {
 }
 
 const Wrapper = styled.div`
-  background-color: ${props => props.theme.colors.inner_background};
+  background-color: ${(props) => props.BackgroundColor};
+  transition: background-color 0.5s ease
   width: 100vw;
-  position: relative;
+  position: fixed;
   margin-left: -50vw;
   left: 50%;
-  margin-bottom: 30px;
+  z-index: 3;
 `;
 
 const StyledNavbar = styled(Navbar)`
-  background-color: ${props => props.theme.colors.inner_background};
   padding-top: 12px;
   padding-bottom: 12px;
   @media (${sm}) {
@@ -129,7 +153,8 @@ const Item = styled(NavItem)`
   font-weight: lighter;
   text-transform: uppercase;
   a {
-    color: ${props => props.theme.colors.primary};
+    color: ${(props) => props.Color};
+    transition: color 0.5s ease
   }
   .active {
     font-weight: bold;

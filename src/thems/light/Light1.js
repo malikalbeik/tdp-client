@@ -12,6 +12,7 @@ const Light1 = {
     colors: {
         background: '#FFFEFB',
         inner_background: '#F6F6F6',
+        scroll: 'white',
         primary: '#003847',
         inner_primary: '#212121',
         selected: '#B30000',
