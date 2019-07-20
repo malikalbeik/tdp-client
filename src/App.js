@@ -14,6 +14,7 @@ import Navbar from './components/Navbar';
 
 // Routing & Links
 import { withRouter } from 'react-router-dom';
+import Routes from './routes';
 
 // Themes
 import Light from './thems';
@@ -28,12 +29,19 @@ class App extends Component {
         <WebsiteWrapper>
           <FlexWrapper>
             <Navbar />
+            <PagesWrapper>
+              <Routes />
+            </PagesWrapper>
           </FlexWrapper>
         </WebsiteWrapper>
       </ThemeProvider>
     );
   }
 }
+
+const PagesWrapper = styled.div`
+  min-height: calc(100vh - 97px);
+`
 
 function mapStateToProps(theme) {
   return theme;
