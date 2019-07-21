@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 
 // Routing & Links
-import {Switch, Route, Redirect} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 import * as links from '../links';
 
 // Pages

@@ -8,6 +8,7 @@ import {Container} from 'reactstrap';
 
 import ErrorContainer from '../components/ErrorContainer'
 import BackgroundImage from '../components/BackgroundImage'
+import AboutUs from '../components/AboutUs'
 
 // Links
 import {homeLink} from '../links';
@@ -39,6 +40,7 @@ class Home extends Component {
     return (
       <Container>
         <BackgroundImage />
+        <AboutUs />
       </Container>
     );
   }
