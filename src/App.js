@@ -11,6 +11,7 @@ import styled, { ThemeProvider } from "styled-components";
 import WebsiteWrapper from './components/WebsiteWrapper';
 import FlexWrapper from './components/FlexWrapper';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 // Routing & Links
 import { withRouter } from 'react-router-dom';
@@ -32,6 +33,7 @@ class App extends Component {
             <PagesWrapper>
               <Routes />
             </PagesWrapper>
+            <Footer />
           </FlexWrapper>
         </WebsiteWrapper>
       </ThemeProvider>

@@ -1,8 +1,7 @@
-import gh1 from '../../images/social-gh-1.svg';
-import tw1 from '../../images/social-tw-1.svg';
-import in1 from '../../images/social-in-1.svg';
-import so1 from '../../images/social-so-1.svg';
+import React from 'react';
 import menu1 from '../../images/menu-1.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitter, faInstagram, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 
 // Light Theme 1
@@ -22,10 +21,10 @@ const Light1 = {
         menu: menu1
     },
     social_icons: {
-        github: gh1,
-        twitter: tw1,
-        linkedin: in1,
-        stackoverflow: so1
+        twitter: <FontAwesomeIcon icon={faTwitter}/>,
+        instagram: <FontAwesomeIcon icon={faInstagram}/>,
+        linkedin: <FontAwesomeIcon icon={faLinkedin}/>,
+        youtube: <FontAwesomeIcon icon={faYoutube} />
     },
     fonts: {
         title: 'Merriweather',

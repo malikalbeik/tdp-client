@@ -33,7 +33,7 @@ class Bar extends Component {
     this.listenScrollEvent = this.listenScrollEvent.bind(this);
     this.state = {
       isOpen: false,
-      Color: props => props.theme.colors.primary,
+      Color: props => props.theme.colors.scroll,
       BackgroundColor: 'none'
     };
   }
