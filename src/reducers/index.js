@@ -32,13 +32,38 @@ function blogPosts(state = {}, action) {
 }
 
 /**
+ * Projects Reducers
+ */
+function projects(state = {}, action) {
+  const { projects, project } = action;
+
+  switch (action.type) {
+    // load projects to store
+    case types.LOAD_PROJECTS:
+      return {
+        ...state,
+        ...objectFromArray(projects)
+      };
+    // add a project 
+    case types.ADD_PROJECT:
+      return {
+        ...state,
+        [project.id]: project
+      };
+    // any other action: return all projectss
+    default:
+      return state;
+  }
+}
+
+/**
  * Contents Reducers
  */
 function contents(state = {}, action) {
     const { contents, content } = action;
 
     switch (action.type) {
-        // load projectss to store
+        // load content to store
         case types.LOAD_CONTENETS:
             return {
                 ...state,
@@ -50,11 +75,11 @@ function contents(state = {}, action) {
                 ...state,
                 [content.slug]: content
             };
-        // any other action: return all projectss
+        // any other action: return all content
         default:
             return state;
     }
 }
 
 // export all above reducers combined
-export default combineReducers({ blogPosts, contents });
+export default combineReducers({ blogPosts, projects, contents });

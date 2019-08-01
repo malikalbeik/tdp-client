@@ -7,6 +7,7 @@ import * as links from '../links';
 
 // Pages
 import Home from '../pages/Home';
+import Projects from '../pages/Projects';
 
 class Routes extends Component {
   
@@ -15,6 +16,7 @@ class Routes extends Component {
       <Route key='home' path={links.homeLink.url} component={this.logPageView}/>,
       <Switch key='routes'>
         <Route exact path={links.homeLink.url} component={Home}/>
+        <Route exact path={links.projectLink.url} component={Projects} />
       </Switch>
     ];
   }

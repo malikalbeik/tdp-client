@@ -4,11 +4,15 @@
 class APIHelper {
 
   static get API_URL() {
-    return 'https://tdp.bilkent.edu.tr/api';
+    return 'http://backend.malikalbeik.com/api/v1';
   }
 
   static get BLOG_URL() {
     return `${this.API_URL}/blog/`;
+  }
+
+  static get PROJECTS_URL() {
+    return `${this.API_URL}/projects/`;
   }
 
   static get CONTENTS_URL() {
