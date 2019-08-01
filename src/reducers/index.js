@@ -41,7 +41,6 @@ function projects(state = {}, action) {
     // load projects to store
     case types.LOAD_PROJECTS:
       return {
-        ...state,
         ...objectFromArray(projects)
       };
     // add a project 
