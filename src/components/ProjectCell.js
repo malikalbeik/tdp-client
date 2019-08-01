@@ -3,7 +3,7 @@ import React, {Component} from "react";
 import PropTypes from 'prop-types';
 
 // Bootstrap
-import {Container, Row, Col} from 'reactstrap';
+import {Container} from 'reactstrap';
 import {sm} from '../breakpoints';
 
 // Styled Components
