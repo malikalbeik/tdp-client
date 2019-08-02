@@ -1,5 +1,5 @@
 # base image
-FROM node:12.2.0
+FROM node:12.7.0
 
 # set working directory
 WORKDIR /tdpClient
@@ -10,7 +10,7 @@ ENV PATH /tdpClient/node_modules/.bin:$PATH
 # install and cache app dependencies
 COPY package.json /tdpClient/package.json
 RUN npm install
-RUN npm install react-scripts@3.0.1 -g
+RUN npm install react-scripts -g
 
 # start app
 CMD ["npm", "start"]
