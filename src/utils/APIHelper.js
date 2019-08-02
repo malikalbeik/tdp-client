@@ -34,6 +34,13 @@ class APIHelper {
   }
 
   /**
+ * Get a projects details by title.
+ */
+  static fetchProjectDetails(project_title) {
+    return this._fetchObject(this.PROJECTS_URL, project_title + "/");
+  }
+
+  /**
    * Get a blog post by id.
    */
   static fetchBlogPost(post_id) {

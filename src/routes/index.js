@@ -8,6 +8,7 @@ import * as links from '../links';
 // Pages
 import Home from '../pages/Home';
 import Projects from '../pages/Projects';
+import ProjectDetails from '../pages/ProjectDetails';
 
 class Routes extends Component {
   
@@ -17,6 +18,7 @@ class Routes extends Component {
       <Switch key='routes'>
         <Route exact path={links.homeLink.url} component={Home}/>
         <Route exact path={links.projectLink.url} component={Projects} />
+        <Route exact path={`${links.projectLink.url}/:project_title`} component={ProjectDetails} />
       </Switch>
     ];
   }

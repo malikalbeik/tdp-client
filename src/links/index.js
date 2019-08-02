@@ -31,7 +31,7 @@ export function projectsPageLink(p) {
   return {
     name: p.title,
     title: p.title,
-    url: `/project/${p.id}`,
+    url: `/projects/${p.title}`,
     documentTitle: `${p.title} | TDP`
   };
 };
