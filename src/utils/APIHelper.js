@@ -8,7 +8,7 @@ class APIHelper {
   }
 
   static get BLOG_URL() {
-    return `${this.API_URL}/blog/`;
+    return `${this.API_URL}/posts/`;
   }
 
   static get PROJECTS_URL() {
