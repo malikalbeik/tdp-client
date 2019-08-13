@@ -43,5 +43,4 @@ export const aboutLink = {
   documentTitle: `About | TDP`
 };
 
-export const navbarLinks = [blogLink, projectLink, aboutLink];
-export const footerLinks = [blogLink, projectLink, aboutLink];
+export const navbarLinks = [homeLink, blogLink, projectLink, aboutLink];
