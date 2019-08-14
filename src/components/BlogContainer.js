@@ -1,5 +1,6 @@
 // React
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 
 // Redux
 import { connect } from 'react-redux';
@@ -20,15 +21,18 @@ import { arrayFromObject } from '../utils';
 import APIHelper from '../utils/APIHelper';
 
 class BlogContainer extends Component {
+    static propTypes = {
+        projectTitle: PropTypes.string
+    }
 
     constructor(props) {
         super(props);
         this.state = { error: null };
-        this.fetchBlogPosts();
+        this.fetchBlogPosts(this.props.ProjectTitle);
     }
 
-    fetchBlogPosts() {
-        APIHelper.fetchBlogPosts().then(posts => {
+    fetchBlogPosts(Project) {
+        APIHelper.fetchBlogPosts(Project).then(posts => {
             this.props.loadBlogPosts({ posts });
         }).catch(error => {
             const { blogPosts } = this.props;

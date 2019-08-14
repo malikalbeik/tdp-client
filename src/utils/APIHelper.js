@@ -22,8 +22,8 @@ class APIHelper {
   /**
    * Get all blog posts.
    */
-  static fetchBlogPosts() {
-    return this._fetchObject(this.BLOG_URL);
+  static fetchBlogPosts(project) {
+    return (project == null) ? this._fetchObject(this.BLOG_URL) : this._fetchObject(this.BLOG_URL, project + "/")
   }
 
   /**

@@ -13,6 +13,7 @@ import { Container } from 'reactstrap';
 import PostTitle from '../components/PostTitle';
 import Loading from '../components/Loading';
 import ErrorContainer from '../components/ErrorContainer'
+import BlogContainer from '../components/BlogContainer'
 
 // Helpers
 import APIHelper from '../utils/APIHelper';
@@ -78,7 +79,9 @@ class ProjectDetails extends Component {
         return [
             <div key='cover'>{this.generateCoverImage(post)}</div>,
             <PostTitle key='title' post={post} />,
-            <p>{post.description}</p>
+            <p>{post.description}</p>,
+            <StyledHeader>{post.title}'s Posts</StyledHeader>,
+            <BlogContainer ProjectTitle={post.title}/>
         ];
     }
 
@@ -106,6 +109,10 @@ const CoverImage = styled.img`
   margin: 0 -50vw 20px -50vw;
 `;
 
+const StyledHeader = styled.h2`
+    color: ${props => props.theme.colors.primary};
+    margin-bottom: 25px;
+`;
 
 function mapStateToProps({ projects }) {
     return { projects }
