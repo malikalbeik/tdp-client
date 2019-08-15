@@ -31,6 +31,7 @@ class PostCell extends Component {
             <CellContainer>
               <WrapperLink href={postLink} rel='noopener noreferrer'>
                 <Image src={"http://backend.malikalbeik.com/" + post.coverImage} alt={post.title} loader={<Loading />} />
+              <ProjectImage src={"http://backend.malikalbeik.com/" + post.project.logo} alt={post.project.title} loader={<Loading />}/>
               <TitleLink href={postLink} rel='noopener noreferrer'><Title>{post.title}</Title></TitleLink>
                 </WrapperLink>
             </CellContainer>
@@ -68,11 +69,24 @@ const Image = styled(Img)`
   margin-bottom: auto;
 `;
 
+const ProjectImage = styled(Img)`
+  width: 75px;
+  height: 75px;
+  border: solid 5px white;
+  border-radius: 50px;
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -40px;
+  box-shadow: 0 2px 4px 0 rgba(155,155,155,0.50);
+`
+
 const Title = styled.h2`
   margin: 10px 0 4px 0;
   padding: 0 25px !important;
   max-width: 100%;
-  font-weight: bold;
   text-align: center;
   @media (${sm}) {
     max-width: 100%;
