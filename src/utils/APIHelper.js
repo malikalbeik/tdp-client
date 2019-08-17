@@ -43,8 +43,8 @@ class APIHelper {
   /**
    * Get a blog post by id.
    */
-  static fetchBlogPost(post_id) {
-    return this._fetchObject(this.BLOG_URL, post_id);
+  static fetchPostDetails(post_slug) {
+    return this._fetchObject(this.BLOG_URL, post_slug + "/");
   }
 
   /**

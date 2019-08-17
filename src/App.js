@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 
 // Styled Components
 import styled, { ThemeProvider } from "styled-components";
+import { sm } from './breakpoints';
 
 // Components
 import WebsiteWrapper from './components/WebsiteWrapper';
@@ -43,6 +44,10 @@ class App extends Component {
 
 const PagesWrapper = styled.div`
   min-height: calc(100vh - 97px);
+  padding-top: 67px;
+  @media (${sm}) {
+    padding-top: 72px;
+  }
 `
 
 function mapStateToProps(theme) {

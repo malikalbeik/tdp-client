@@ -25,10 +25,10 @@ class Blog extends Component {
 
     render() {
         return (
-            <StyledContainer>
+            <Container>
                 <StyledHeader>Latest Posts</StyledHeader>
                 <BlogContainer />
-            </StyledContainer>
+            </Container>
         );
     }
 
@@ -37,11 +37,6 @@ class Blog extends Component {
 const StyledHeader = styled.h1`
     color: ${props => props.theme.colors.primary};
     margin-bottom: 25px;
-`;
-
-const StyledContainer = styled(Container)`
-    margin-top: 100px;
-  }
 `;
 
 export default Blog;

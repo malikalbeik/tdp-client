@@ -81,6 +81,7 @@ const ProjectImage = styled(Img)`
   margin-right: auto;
   margin-top: -40px;
   box-shadow: 0 2px 4px 0 rgba(155,155,155,0.50);
+  background-color: white;
 `
 
 const Title = styled.h2`

@@ -1,12 +1,15 @@
 // React
-import React, {Component} from "react";
+import React, { Component } from "react";
 import PropTypes from 'prop-types';
+
+// Moment
+import Moment from 'react-moment';
 
 // Styled Components
 import styled from 'styled-components';
 
 // Bootstrap
-import {sm} from '../breakpoints';
+import { sm } from '../breakpoints';
 
 class PostTitle extends Component {
   static propTypes = {
@@ -14,11 +17,12 @@ class PostTitle extends Component {
   }
 
   render() {
-    const {post} = this.props;
+    const { post } = this.props;
 
     return (
       <Container>
         <h1>{post.title}</h1>
+        <h2><Moment format='LL' date={post.date_published} /></h2>
       </Container>
     );
   }
@@ -28,10 +32,16 @@ class PostTitle extends Component {
 const Container = styled.div`
     h1 {
         font-size: 32px;
-        color: ${props => props.theme.colors.selected};
-        margin-bottom: 25px;
         @media (${sm}) {
             font-size: 24px;
+        }
+    }
+    h2 {
+        font-family: ${props => props.theme.fonts.body};
+        margin-bottom: 24px;
+        font-size: 18px;
+        @media (${sm}) {
+            font-size: 12px;
         }
     }
 `;

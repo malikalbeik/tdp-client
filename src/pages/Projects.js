@@ -72,7 +72,6 @@ class Projects extends Component {
 }
 
 const ProjectsContainer = styled(Container)`
-    margin-top: 100px;
     padding: 25px;
     display: flex;
     flex-direction: row;

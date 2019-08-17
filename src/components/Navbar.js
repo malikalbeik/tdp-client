@@ -33,8 +33,10 @@ class Bar extends Component {
     this.listenScrollEvent = this.listenScrollEvent.bind(this);
     this.state = {
       isOpen: false,
-      Color: props => props.theme.colors.scroll,
-      BackgroundColor: 'none'
+      // Color: props => props.theme.colors.scroll,
+      // BackgroundColor: 'none'
+      Color: props => props.theme.colors.primary,
+      BackgroundColor:  props => props.theme.colors.inner_background    
     };
   }
 
@@ -48,12 +50,13 @@ class Bar extends Component {
     if (window.scrollY > 50) {
       this.setState({
         Color: props => props.theme.colors.primary,
-        BackgroundColor: props => props.theme.colors.inner_background,
+        // BackgroundColor: props => props.theme.colors.inner_background,
       })
     } else {
       this.setState({
-        Color: props => props.theme.colors.scroll,
-        BackgroundColor: 'none',
+        // Color: props => props.theme.colors.scroll,
+        Color: props => props.theme.colors.primary
+        // BackgroundColor: 'none',
 
       })
     }
@@ -115,6 +118,7 @@ const Wrapper = styled.div`
   margin-left: -50vw;
   left: 50%;
   z-index: 3;
+  box-shadow: 0 2px 6px 0 rgba(138,138,138,0.50); 
 `;
 
 const StyledNavbar = styled(Navbar)`
