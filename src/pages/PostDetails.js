@@ -13,6 +13,7 @@ import { sm } from '../breakpoints';
 import { Container } from 'reactstrap';
 import PostTitle from '../components/PostTitle';
 import Loading from '../components/Loading';
+import ShareButtons from '../components/ShareButtons';
 import ErrorContainer from '../components/ErrorContainer'
 
 // Helpers
@@ -85,6 +86,7 @@ class PostDetails extends Component {
         return [
             <PostTitle key='title' post={post} />,
             <div key='cover'>{this.generateCoverImage(post)}</div>,
+            <ShareButtons key='share' post={post} />,
             <ContentContainer>
                 <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
                 {this.generateImageSlider(arrayFromObject(post.images, post.title))}
