@@ -13,11 +13,13 @@ import { sm } from '../breakpoints';
 import { Container } from 'reactstrap';
 import PostTitle from '../components/PostTitle';
 import Loading from '../components/Loading';
+import ShareButtons from '../components/ShareButtons';
 import ErrorContainer from '../components/ErrorContainer'
 
 // Helpers
 import APIHelper from '../utils/APIHelper';
 import { arrayFromObject } from '../utils';
+import { Fade } from 'react-slideshow-image';
 
 
 class PostDetails extends Component {
@@ -84,7 +86,11 @@ class PostDetails extends Component {
         return [
             <PostTitle key='title' post={post} />,
             <div key='cover'>{this.generateCoverImage(post)}</div>,
-            <ContentContainer dangerouslySetInnerHTML={{ __html: post.content }}></ContentContainer>,
+            <ShareButtons key='share' post={post} />,
+            <ContentContainer>
+                <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
+                {this.generateImageSlider(arrayFromObject(post.images, post.title))}
+            </ContentContainer>
         ];
     }
 
@@ -96,6 +102,28 @@ class PostDetails extends Component {
         );
     }
 
+    generateImageSlider(images, postTitle) {
+        if (images === undefined || images.length === 0) { return }
+        let table = [];
+        Object.values(images).forEach(function (image) {
+            image = image.image;
+            table.push(
+                <Fader className="each-fade">
+                    <ImageContainer className="image-container">
+                        <img src={"http://backend.malikalbeik.com/" + image} alt={postTitle} />
+                    </ImageContainer>
+                </Fader>
+            )
+        });
+        return [
+            <h1>This post's Images</h1>,
+            <ImageSlider className="slide-container">
+                <Fade {...fadeProperties}>
+                    {table}
+                </Fade>
+            </ImageSlider>
+        ]
+    }
 }
 
 const CoverImage = styled.img`
@@ -119,6 +147,30 @@ const ContentContainer = styled(Container)`
     border: none;
   }
 `;
+const ImageSlider = styled.div`
+  width: 100%;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+`;
+
+const fadeProperties = {
+    duration: 5000,
+    transitionDuration: 500,
+}
+
+const Fader = styled.div`
+    width: 100%;
+`;
+
+const ImageContainer = styled.div`
+    width: 100%;
+
+    img {
+        max-width: 100%;
+    }
+`;
+
 
 function mapStateToProps({ blogPosts }) {
     return { blogPosts }
