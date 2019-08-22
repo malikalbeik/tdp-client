@@ -10,7 +10,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  Input
+  // Input
 } from 'reactstrap';
 
 // Styled Components
@@ -100,7 +100,7 @@ class Bar extends Component {
                     </Item>
                   ))
                 }
-                <SearchInput placeholder="Search" />
+                {/* <SearchInput placeholder="Search" /> */}
               </Nav>
             </Collapse>
           </StyledNavbar>
@@ -174,19 +174,19 @@ const Item = styled(NavItem)`
   }
 `
 
-const SearchInput = styled(Input)`
-  padding-left: 4px;
-  margin-left: 15px;
-  background-color: white !important;
-  border: none;
-  &:focus {
-    background-color: ${props => props.theme.colors.inner_background};
-    outline: none;
-  }
-  @media (${sm}) {
-    margin-left: 0px;
-  }
-`
+// const SearchInput = styled(Input)`
+//   padding-left: 4px;
+//   margin-left: 15px;
+//   background-color: white !important;
+//   border: none;
+//   &:focus {
+//     background-color: ${props => props.theme.colors.inner_background};
+//     outline: none;
+//   }
+//   @media (${sm}) {
+//     margin-left: 0px;
+//   }
+// `
 
 const Toggler = styled(NavbarToggler)`
   padding-right: 4px;
