@@ -11,6 +11,7 @@ import Blog from '../pages/Blog';
 import Projects from '../pages/Projects';
 import ProjectDetails from '../pages/ProjectDetails';
 import PostDetails from '../pages/PostDetails';
+import About from '../pages/About';
 
 class Routes extends Component {
   
@@ -23,6 +24,7 @@ class Routes extends Component {
         <Route exact path={links.projectLink.url} component={Projects} />
         <Route exact path={`${links.projectLink.url}/:project_title`} component={ProjectDetails} />
         <Route exact path={`${links.blogLink.url}/:post_slug`} component={PostDetails} />
+        <Route exact path={links.aboutLink.url} component={About} />
       </Switch>
     ];
   }
