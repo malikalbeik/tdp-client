@@ -4,7 +4,7 @@
 class APIHelper {
 
   static get API_URL() {
-    return 'http://backend.malikalbeik.com/api/v1';
+    return 'http://backend.malikalbeik.com/api';
   }
 
   static get BLOG_URL() {
@@ -23,7 +23,7 @@ class APIHelper {
    * Get all blog posts.
    */
   static fetchBlogPosts(project) {
-    return (project == null) ? this._fetchObject(this.BLOG_URL) : this._fetchObject(this.BLOG_URL, project + "/")
+    return (project == null) ? this._fetchObject(this.BLOG_URL) : this._fetchObject(this.BLOG_URL, project)
   }
 
   /**
@@ -37,14 +37,14 @@ class APIHelper {
  * Get a projects details by title.
  */
   static fetchProjectDetails(project_title) {
-    return this._fetchObject(this.PROJECTS_URL, project_title + "/");
+    return this._fetchObject(this.PROJECTS_URL, project_title);
   }
 
   /**
    * Get a blog post by id.
    */
   static fetchPostDetails(post_slug) {
-    return this._fetchObject(this.BLOG_URL, post_slug + "/");
+    return this._fetchObject(this.BLOG_URL, post_slug);
   }
 
   /**
