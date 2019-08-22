@@ -71,9 +71,9 @@ class PostDetails extends Component {
         }
 
         return (
-            <Container>
+            <PostContainer>
                 {this.generateBody(post)}
-            </Container>
+            </PostContainer>
         );
 
     }
@@ -126,12 +126,16 @@ class PostDetails extends Component {
     }
 }
 
+const PostContainer = styled(Container)`
+    padding-top: 25px;
+`
+
 const CoverImage = styled.img`
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin: 0 -50vw 20px -50vw;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin: 0 -50vw 20px -50vw;
 `;
 
 const ContentContainer = styled(Container)`

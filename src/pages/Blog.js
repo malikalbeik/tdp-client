@@ -36,6 +36,7 @@ class Blog extends Component {
 
 const StyledHeader = styled.h1`
     color: ${props => props.theme.colors.primary};
+    margin-top: 25px;
     margin-bottom: 25px;
 `;
 
