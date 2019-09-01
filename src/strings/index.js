@@ -4,3 +4,9 @@ export const genericStrings = {
   share: "SHARE",
   twitterHandler: "TDPBilkent",
 };
+
+export const counterStrings = [
+  { title: "Something", value: 150 },
+  { title: "Volunteers", value: 1000 },
+  { title: "People Helped", value: 599 }
+];

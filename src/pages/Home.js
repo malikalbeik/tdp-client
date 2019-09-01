@@ -12,6 +12,7 @@ import ErrorContainer from '../components/ErrorContainer'
 import BackgroundImage from '../components/BackgroundImage'
 import AboutUs from '../components/AboutUs'
 import BlogContainer from '../components/BlogContainer'
+import Counter from '../components/Counter'
 
 // Links
 import {homeLink} from '../links';
@@ -46,6 +47,8 @@ class Home extends Component {
         <AboutUs />
         <StyledHeader>Latest Posts</StyledHeader>
         <BlogContainer maxPostsNumber={3} />
+        <StyledHeader>Sayilarla TDP</StyledHeader>
+        <Counter/>
       </Container>
     );
   }

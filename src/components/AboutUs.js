@@ -38,14 +38,24 @@ class AboutUs extends Component {
         const about = contents.mainpageabouttext;
         return (
             <Wrapper>
-                <AboutUsTextContainer>
-                    <StyledHeader>Hakkimizda</StyledHeader>
-                    <StyledParagraphContainer key='body' dangerouslySetInnerHTML={{ __html: about.content }} />
-                    <NavLink exact to={aboutLink.url}>Read More</NavLink>
-                </AboutUsTextContainer>
-                <StyledImage key='image' src={"http://backend.malikalbeik.com/" + about.image} alt="TDP hakkimizda fotografi" loader={<Loading />} />
+                {this.generateBody(about)}
             </Wrapper>
         );
+    }
+
+    generateBody(about) {
+        if (!about) {
+            return <Loading />
+        }
+
+        return [
+            <AboutUsTextContainer key='textContainer'>
+                <StyledHeader key='header'>Hakkimizda</StyledHeader>
+                <StyledParagraphContainer key='body' dangerouslySetInnerHTML={{ __html: about.content }} />
+                <NavLink key='link' exact to={aboutLink.url}>Read More</NavLink>
+            </AboutUsTextContainer>,
+            <StyledImage key='image' src={"http://backend.malikalbeik.com/" + about.image} alt="TDP hakkimizda fotografi" loader={<Loading />} />
+        ];
     }
 }
 
