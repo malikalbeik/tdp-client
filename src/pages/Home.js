@@ -45,7 +45,7 @@ class Home extends Component {
         <BackgroundImage />
         <AboutUs />
         <StyledHeader>Latest Posts</StyledHeader>
-        <BlogContainer />
+        <BlogContainer maxPostsNumber={3} />
       </Container>
     );
   }

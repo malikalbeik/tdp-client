@@ -18,7 +18,7 @@ class BackgroundImage extends Component {
 }
 
 const Wrapper = styled.div`
-  width: 100vw;
+  width: calc(100vw - 7.5px);
   position: relative;
   margin-left: -50vw;
   left: 50%;

@@ -22,7 +22,8 @@ import APIHelper from '../utils/APIHelper';
 
 class BlogContainer extends Component {
     static propTypes = {
-        projectTitle: PropTypes.string
+        projectTitle: PropTypes.string,
+        maxPostsNumber: PropTypes.number
     }
 
     constructor(props) {
@@ -51,9 +52,12 @@ class BlogContainer extends Component {
             );
         }
 
-        const { blogPosts } = this.props;
+        const { blogPosts, maxPostsNumber } = this.props;
         const postsArray = arrayFromObject(blogPosts)
-        const sortedPosts = postsArray.sort((p1, p2) => (p1.title > p2.title ? 1 : -1))
+        var sortedPosts = postsArray.sort((p1, p2) => (p1.date_published < p2.date_published ? 1 : -1))
+        if (maxPostsNumber != null) {
+            sortedPosts = sortedPosts.slice(0, maxPostsNumber);
+        }
 
         return (
             <PostsContainer>

@@ -54,6 +54,11 @@ class APIHelper {
     return this._fetchObject(this.CONTENTS_URL, 'about');
   }
 
+  static fetchMainPageAbout() {
+    return this._fetchObject(this.CONTENTS_URL, 'mainpageabouttext');
+  }
+
+  
   /**
    * Helper function to fetch object/s from a URL.
    */

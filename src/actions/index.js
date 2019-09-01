@@ -5,6 +5,10 @@ import * as types from './types';
  * Action Creators
  */
 
+export function loadTheme(theme) {
+    return { type: types.LOAD_THEME, theme };
+}
+
 export function loadBlogPosts({ posts }) {
     return { type: types.LOAD_BLOG_POSTS, posts };
 }

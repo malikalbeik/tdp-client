@@ -30,36 +30,10 @@ class Bar extends Component {
     super(props);
 
     this.toggle = this.toggle.bind(this);
-    this.listenScrollEvent = this.listenScrollEvent.bind(this);
     this.state = {
       isOpen: false,
-      // Color: props => props.theme.colors.scroll,
-      // BackgroundColor: 'none'
-      Color: props => props.theme.colors.primary,
       BackgroundColor:  props => props.theme.colors.inner_background    
     };
-  }
-
-  // Add an event listeneer to change headers colors.
-  componentDidMount() {
-    window.addEventListener('scroll', this.listenScrollEvent)
-  }
-
-  // Change header colors when scrolling.
-  listenScrollEvent = e => {
-    if (window.scrollY > 50) {
-      this.setState({
-        Color: props => props.theme.colors.primary,
-        // BackgroundColor: props => props.theme.colors.inner_background,
-      })
-    } else {
-      this.setState({
-        // Color: props => props.theme.colors.scroll,
-        Color: props => props.theme.colors.primary
-        // BackgroundColor: 'none',
-
-      })
-    }
   }
 
   open() {
@@ -95,7 +69,7 @@ class Bar extends Component {
               <Nav navbar className="ml-auto">
                 {
                   navbarLinks.map(l => (
-                    <Item key={l.name} Color={this.state.Color}>
+                    <Item key={l.name}>
                       <NavLink activeClassName='active' exact to={l.url} onClick={_ => {this.close()}}>{l.name}</NavLink>
                     </Item>
                   ))
@@ -157,7 +131,7 @@ const Item = styled(NavItem)`
   font-weight: lighter;
   text-transform: uppercase;
   a {
-    color: ${(props) => props.Color};
+    color: ${props => props.theme.colors.primary};
     transition: color 0.5s ease
   }
   .active {

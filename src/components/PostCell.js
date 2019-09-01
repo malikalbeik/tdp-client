@@ -24,18 +24,18 @@ class PostCell extends Component {
     }
 
     render() {
-        const { post } = this.props;
+      const { post } = this.props;
       var postLink = blogPostLink(post).url
 
-        return (
-            <CellContainer>
-              <WrapperLink href={postLink} rel='noopener noreferrer'>
-                <Image src={"http://backend.malikalbeik.com/" + post.coverImage} alt={post.title} loader={<Loading />} />
+      return (
+          <CellContainer>
+            <WrapperLink href={postLink} rel='noopener noreferrer'>
+              <Image src={"http://backend.malikalbeik.com/" + post.coverImage} alt={post.title} loader={<Loading />} />
               <ProjectImage src={"http://backend.malikalbeik.com/" + post.project.logo} alt={post.project.title} loader={<Loading />}/>
-              <TitleLink href={postLink} rel='noopener noreferrer'><Title>{post.title}</Title></TitleLink>
-                </WrapperLink>
-            </CellContainer>
-        );
+              <Title>{post.title}</Title>
+            </WrapperLink>
+          </CellContainer>
+      );
     }
 
 }
@@ -85,7 +85,7 @@ const ProjectImage = styled(Img)`
 `
 
 const Title = styled.h2`
-  margin: 10px 0 4px 0;
+  margin: 35px 0px;
   padding: 0 25px !important;
   max-width: 100%;
   text-align: center;
@@ -95,12 +95,5 @@ const Title = styled.h2`
   }
 `;
 
-const TitleLink = styled.a`
-  color: ${props => props.theme.colors.primary} !important;
-  margin: 0 20px;
-  &:hover {
-    text-decoration: none;
-  }
-`
 
 export default PostCell;

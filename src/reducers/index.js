@@ -8,6 +8,24 @@ import * as types from '../actions/types';
 import { objectFromArray } from '../utils';
 
 /**
+ * Theme Reducers
+ */
+function theme(state = {}, action) {
+  const { theme } = action;
+
+  switch (action.type) {
+    // load theme to store
+    case types.LOAD_THEME:
+      return {
+        ...theme
+      };
+    // any other action: return all posts
+    default:
+      return state;
+  }
+}
+
+/**
  * Blog Posts Reducers
  */
 function blogPosts(state = {}, action) {
@@ -81,4 +99,4 @@ function contents(state = {}, action) {
 }
 
 // export all above reducers combined
-export default combineReducers({ blogPosts, projects, contents });
+export default combineReducers({ theme, blogPosts, projects, contents });
