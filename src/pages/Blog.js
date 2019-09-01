@@ -26,7 +26,7 @@ class Blog extends Component {
     render() {
         return (
             <Container>
-                <StyledHeader>Latest Posts</StyledHeader>
+                <StyledHeader>Son Gönderilerimiz</StyledHeader>
                 <BlogContainer />
             </Container>
         );

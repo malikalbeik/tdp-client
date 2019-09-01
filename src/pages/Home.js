@@ -45,9 +45,9 @@ class Home extends Component {
       <Container>
         <BackgroundImage />
         <AboutUs />
-        <StyledHeader>Latest Posts</StyledHeader>
+        <StyledHeader>Son Gönderilerimiz</StyledHeader>
         <BlogContainer maxPostsNumber={3} />
-        <StyledHeader>Sayilarla TDP</StyledHeader>
+        <StyledHeader>Sayılarla TDP</StyledHeader>
         <Counter/>
       </Container>
     );

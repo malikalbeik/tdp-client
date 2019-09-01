@@ -50,9 +50,9 @@ class AboutUs extends Component {
 
         return [
             <AboutUsTextContainer key='textContainer'>
-                <StyledHeader key='header'>Hakkimizda</StyledHeader>
+                <StyledHeader key='header'>Hakkımızda</StyledHeader>
                 <StyledParagraphContainer key='body' dangerouslySetInnerHTML={{ __html: about.content }} />
-                <NavLink key='link' exact to={aboutLink.url}>Read More</NavLink>
+                <NavLink key='link' exact to={aboutLink.url}>Devamını Oku</NavLink>
             </AboutUsTextContainer>,
             <StyledImage key='image' src={"http://backend.malikalbeik.com/" + about.image} alt="TDP hakkimizda fotografi" loader={<Loading />} />
         ];

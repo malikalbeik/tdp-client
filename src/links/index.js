@@ -1,13 +1,13 @@
 export const homeLink = {
-  name: 'Home',
-  title: 'Home',
+  name: 'ANA SAYFA',
+  title: 'ANA SAYFA',
   url: '/',
   documentTitle: 'TDP | Sorunun Değil Çözümün Parçası'
 };
 
 export const blogLink = {
   name: 'Blog',
-  title: 'Latest Posts',
+  title: 'Son Gönderilerimiz',
   url: '/blog',
   documentTitle: `Blog | TDP`
 };
@@ -21,10 +21,10 @@ export function blogPostLink(p) {
 };
 
 export const projectLink = {
-  name: 'Projects',
-  title: 'Our Projects',
+  name: 'Projelerimiz',
+  title: 'Projelerimiz',
   url: '/projects',
-  documentTitle: `Projects | TDP`
+  documentTitle: `Projelerimiz | TDP`
 };
 
 export function projectsPageLink(p) {
@@ -37,10 +37,10 @@ export function projectsPageLink(p) {
 };
 
 export const aboutLink = {
-  name: 'About',
-  title: 'About Us',
+  name: 'Hakkımızda',
+  title: 'Hakkımızda',
   url: '/about',
-  documentTitle: `About | TDP`
+  documentTitle: `Hakkımızda | TDP`
 };
 
 export const navbarLinks = [homeLink, blogLink, projectLink, aboutLink];
