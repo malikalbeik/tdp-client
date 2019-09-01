@@ -10,3 +10,7 @@ export const counterStrings = [
   { title: "Volunteers", value: 1000 },
   { title: "People Helped", value: 599 }
 ];
+
+export const homeStrings = {
+  bio: "TDP is falan filan"
+};
