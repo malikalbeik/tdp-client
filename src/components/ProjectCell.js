@@ -84,6 +84,7 @@ const Title = styled.h2`
 const Paragraph = styled.p`
   margin: 20px 0 12px 0;
   font-size: 10pt;
+  text-align: justify;
   @media (${sm}) {
     font-size: 10pt;
   }

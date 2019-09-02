@@ -10,10 +10,14 @@ import styled, { withTheme } from 'styled-components';
 
 // Components
 import { Container } from 'reactstrap';
-import PostTitle from '../components/PostTitle';
+import ProjectTitle from '../components/ProjectTitle';
 import Loading from '../components/Loading';
 import ErrorContainer from '../components/ErrorContainer'
 import BlogContainer from '../components/BlogContainer'
+import ProjectSocialLinks from '../components/ProjectSocialLinks'
+
+// Breakpoints
+import { sm } from '../breakpoints';
 
 // Helpers
 import APIHelper from '../utils/APIHelper';
@@ -41,9 +45,9 @@ class ProjectDetails extends Component {
         });
     }
 
-    setTitle(post) {
-        if (post) {
-            document.title = `${post.title} | TDP`;
+    setTitle(project) {
+        if (project) {
+            document.title = `${project.title} | TDP`;
         }
     }
 
@@ -51,10 +55,10 @@ class ProjectDetails extends Component {
         const { projects  } = this.props;
         const { project_title } = this.props.match.params;
 
-        const postsArray = arrayFromObject(projects);
-        var post = postsArray.filter(p => (p.title === project_title))[0]
+        const projectsArray = arrayFromObject(projects);
+        var project = projectsArray.filter(p => (p.title === project_title))[0]
 
-        this.setTitle(post);
+        this.setTitle(project);
 
         const { error } = this.state;
         if (error) {
@@ -65,32 +69,35 @@ class ProjectDetails extends Component {
 
         return (
             <Container>
-                {this.generateBody(post)}
+                {this.generateBody(project)}
             </Container>
         );
 
     }
 
-    generateBody(post) {
-        if (!post) {
+    generateBody(project) {
+        if (!project) {
             return <Loading />
         }
         
         return [
-            <div key='cover'>{this.generateCoverImage(post)}</div>,
-            <PostTitle key='title' post={post} />,
-            <p>{post.description}</p>,
-            <StyledHeader>{post.title}'s Posts</StyledHeader>,
-            <BlogContainer ProjectTitle={post.title}/>
+            <div key='cover'>{this.generateCoverImage(project)}</div>,
+            <HeadContainer key='Head container'>
+                <ProjectTitle key='title' project={project} />
+                <ProjectSocialLinks Project={project} />
+            </HeadContainer>,
+            <StyledParagraph key='project description'>{project.description}></StyledParagraph>,
+            <StyledHeader key='Header'>{project.title}'s Posts</StyledHeader>,
+            <BlogContainer key='blog' ProjectTitle={project.title}/>
         ];
     }
 
-    generateCoverImage(post) {
-        if (!post) { return }
-        if (!post.backgroundImage) { return }   
+    generateCoverImage(project) {
+        if (!project) { return }
+        if (!project.backgroundImage) { return }   
         return (
             <CoverContainer>
-                <CoverImage src={"http://backend.malikalbeik.com/" + post.backgroundImage} alt={post.title} loader={<Loading />} />
+                <CoverImage src={"http://backend.malikalbeik.com/" + project.backgroundImage} alt={project.title} loader={<Loading />} />
             </CoverContainer>
         );
     }
@@ -107,6 +114,19 @@ const CoverImage = styled.img`
   left: 50%;
   right: 50%;
   margin: 0 -50vw 20px -50vw;
+`;
+
+const HeadContainer = styled(Container)`
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    @media (${sm}) {
+        padding: 0;
+    }
+`;
+
+const StyledParagraph = styled.p`
+    text-align: justify;
 `;
 
 const StyledHeader = styled.h2`
