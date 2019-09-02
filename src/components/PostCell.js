@@ -41,7 +41,6 @@ class PostCell extends Component {
 }
 
 const CellContainer = styled(Container)`
-  margin: 20px 0 20px 0;
   background-color: ${props => props.theme.colors.inner_background};
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.3s ease-in-out;

@@ -7,9 +7,9 @@ export const genericStrings = {
 };
 
 export const counterStrings = [
-  { title: "Something", value: 150 },
-  { title: "Volunteers", value: 1000 },
-  { title: "People Helped", value: 599 }
+  { title: "Aktif Gönüllü", value: 1500 },
+  { title: "Aktif Proje", value: 19 },
+  { title: "Depreminden", value: 1999 }
 ];
 
 export const homeStrings = {
