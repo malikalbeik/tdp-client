@@ -4,7 +4,7 @@
 class APIHelper {
 
   static get API_URL() {
-    return 'http://backend.malikalbeik.com/api';
+    return 'https://malikalbeik.com/api';
   }
 
   static get BLOG_URL() {

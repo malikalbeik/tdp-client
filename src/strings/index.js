@@ -15,3 +15,5 @@ export const counterStrings = [
 export const homeStrings = {
   bio: "TDP is falan filan"
 };
+
+export const photosLink = "https://malikalbeik.com/";

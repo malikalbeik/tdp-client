@@ -16,6 +16,7 @@ import Loading from './Loading';
 import Img from 'react-image'
 
 import { blogPostLink } from '../links'
+import { photosLink } from '../strings';
 
 
 class PostCell extends Component {
@@ -30,8 +31,8 @@ class PostCell extends Component {
       return (
           <CellContainer>
             <WrapperLink href={postLink} rel='noopener noreferrer'>
-              <Image src={"http://backend.malikalbeik.com/" + post.coverImage} alt={post.title} loader={<Loading />} />
-              <ProjectImage src={"http://backend.malikalbeik.com/" + post.project.logo} alt={post.project.title} loader={<Loading />}/>
+              <Image src={photosLink + post.coverImage} alt={post.title} loader={<Loading />} />
+              <ProjectImage src={photosLink + post.project.logo} alt={post.project.title} loader={<Loading />}/>
               <Title>{post.title}</Title>
             </WrapperLink>
           </CellContainer>

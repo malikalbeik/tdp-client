@@ -20,9 +20,11 @@ import {aboutLink} from '../links';
 
 // Strings
 import {genericStrings} from '../strings';
+import {photosLink} from '../strings'
 
 // Helpers
 import APIHelper from '../utils/APIHelper';
+
 
 
 class About extends Component {
@@ -63,7 +65,7 @@ class About extends Component {
       return <Loading/>
     }
     return [
-      <StyledImage key='image' src={"http://backend.malikalbeik.com/" + about.image} alt={genericStrings.name} loader={<Loading/>}/>,
+      <StyledImage key='image' src={photosLink + about.image} alt={genericStrings.name} loader={<Loading/>}/>,
       <StyledTitle key='title'>{about.title}</StyledTitle>,
       <ContentContainer key='body' dangerouslySetInnerHTML={{ __html: about.content}}/>
     ];
