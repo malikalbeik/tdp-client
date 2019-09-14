@@ -23,6 +23,9 @@ import { sm } from '../breakpoints';
 import APIHelper from '../utils/APIHelper';
 import { arrayFromObject } from '../utils';
 
+// links
+import { photosLink} from '../strings';
+
 
 class ProjectDetails extends Component {
 
@@ -97,7 +100,7 @@ class ProjectDetails extends Component {
         if (!project.backgroundImage) { return }   
         return (
             <CoverContainer>
-                <CoverImage src={"http://backend.malikalbeik.com/" + project.backgroundImage} alt={project.title} loader={<Loading />} />
+                <CoverImage src={photosLink + project.backgroundImage} alt={project.title} loader={<Loading />} />
             </CoverContainer>
         );
     }

@@ -21,6 +21,8 @@ import APIHelper from '../utils/APIHelper';
 import { arrayFromObject } from '../utils';
 import { Fade } from 'react-slideshow-image';
 
+// links
+import {photosLink} from '../strings'
 
 class PostDetails extends Component {
 
@@ -98,7 +100,7 @@ class PostDetails extends Component {
         if (!post) { return }
         if (!post.coverImage) { return }
         return (
-            <CoverImage src={"http://backend.malikalbeik.com/" + post.coverImage} alt={post.title} loader={<Loading />} />
+            <CoverImage src={photosLink + post.coverImage} alt={post.title} loader={<Loading />} />
         );
     }
 
@@ -110,7 +112,7 @@ class PostDetails extends Component {
             table.push(
                 <Fader className="each-fade">
                     <ImageContainer className="image-container">
-                        <img src={"http://backend.malikalbeik.com/" + image} alt={postTitle} />
+                        <img src={photosLink + image} alt={postTitle} />
                     </ImageContainer>
                 </Fader>
             )

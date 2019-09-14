@@ -15,7 +15,9 @@ import Loading from './Loading';
 // 3rd party components
 import Img from 'react-image'
 
+// links
 import {projectsPageLink} from '../links'
+import { photosLink } from '../strings';
 
 
 class ProjectCell extends Component {
@@ -30,7 +32,7 @@ class ProjectCell extends Component {
     return (
       <CellContainer>
         <WrapperLink href={projectLink} rel='noopener noreferrer'>
-          <Image src={"http://backend.malikalbeik.com/" + project.logo} alt={project.title} loader={<Loading/>}/>
+          <Image src={photosLink + project.logo} alt={project.title} loader={<Loading/>}/>
           <TitleLink href={projectLink} rel='noopener noreferrer'><Title>{project.title}</Title></TitleLink>
           <Paragraph>{project.shortDescription}</Paragraph>
         </WrapperLink>

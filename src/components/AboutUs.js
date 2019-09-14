@@ -11,10 +11,11 @@ import Loading from './Loading';
 import { NavLink } from 'react-router-dom';
 
 // Breakpoints
-import { md } from '../breakpoints'
+import { md } from '../breakpoints';
 
 // Links
-import { aboutLink } from '../links'
+import { aboutLink } from '../links';
+import { photosLink } from '../strings';
 
 // Helpers
 import APIHelper from '../utils/APIHelper';
@@ -54,7 +55,7 @@ class AboutUs extends Component {
                 <StyledParagraphContainer key='body' dangerouslySetInnerHTML={{ __html: about.content }} />
                 <NavLink key='link' exact to={aboutLink.url}>Devamını Oku</NavLink>
             </AboutUsTextContainer>,
-            <StyledImage key='image' src={"http://backend.malikalbeik.com/" + about.image} alt="TDP hakkimizda fotografi" loader={<Loading />} />
+            <StyledImage key='image' src={photosLink + about.image} alt="TDP hakkimizda fotografi" loader={<Loading />} />
         ];
     }
 }
