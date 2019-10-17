@@ -23,7 +23,7 @@ class Footer extends Component {
               <SocialLinks />
             </Col>
             <Col sm={12} md={6}>
-              <Credits>Made with <Heart>❤</Heart> by Malik Albeik</Credits>
+              <Credits>Made with <Heart>❤</Heart> by <a href="https://malikalbeik.me/">Malik Albeik</a></Credits>
             </Col>
           </Row>
         </FooterInnerContainer>
@@ -48,6 +48,15 @@ const Credits = styled.p`
     width: calc(100% - 16px);
     text-align: center;
   }
+
+  a {
+    color:${props => props.theme.colors.primary} !important;
+    text-decoration: none;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
 `;
 
 const Heart = styled.span`
