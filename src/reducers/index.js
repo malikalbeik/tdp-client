@@ -29,19 +29,13 @@ function theme(state = {}, action) {
  * Blog Posts Reducers
  */
 function blogPosts(state = {}, action) {
-  const {posts, post} = action;
+  const {posts} = action;
 
   switch (action.type) {
     // load posts to store
     case types.LOAD_BLOG_POSTS:
       return {
         ...objectFromArray(posts)
-      };
-    // add a post
-    case types.ADD_BLOG_POST:
-      return {
-        ...state,
-        [post.id]: post
       };
     // any other action: return all posts
     default:

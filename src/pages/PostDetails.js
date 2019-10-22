@@ -3,7 +3,7 @@ import React, { Component } from "react";
 
 // Redux
 import { connect } from 'react-redux';
-import { addBlogPost } from '../actions';
+import { loadBlogPosts } from '../actions';
 
 // Styled Components
 import styled, { withTheme } from 'styled-components';
@@ -39,7 +39,7 @@ class PostDetails extends Component {
     fetchPostDetails() {
         const { post_slug } = this.props.match.params;
         APIHelper.fetchPostDetails(post_slug).then(posts => {
-            this.props.addBlogPost({ posts });
+            this.props.loadBlogPosts({ posts });
         }).catch(error => {
             const { blogPosts } = this.props;
             const isEmpty = Object.getOwnPropertyNames(blogPosts).length === 0;
@@ -184,7 +184,7 @@ function mapStateToProps({ blogPosts }) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        addBlogPost: post => dispatch(addBlogPost(post))
+        loadBlogPosts: post => dispatch(loadBlogPosts(post))
     }
 }
 
