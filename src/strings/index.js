@@ -13,7 +13,7 @@ export const counterStrings = [
 ];
 
 export const homeStrings = {
-  bio: "TDP is falan filan"
+  bio: "Toplumsal Duyarlılık Projeleri, 1999 yılında Marmara Depremi kazazedelerine yardım amaçlı kurulmuş olup o günden beri vizyonunu geliştirerek onlarca farklı hedef kitleye ulaşmaktadır. Toplumsal Duyarlılık Projeleri (TDP) Bilkent Üniversitesi çatısı altında faaliyet gösteren ve tamamen gönüllü öğrencilerden oluşan bir topluluktur. 1500’ü aşkın gönüllüsüyle bugün TDP sayısız gülümsemeye ulaşmak için durmaksızın çalışıyor. 19 farklı projesiyle köy okullarına, hastanedeki çocuklara, sığınma evindeki kadın ve çocuklarına, mültecilere, sokakta çalışan ya da çalışma potansiyeli olan çocuklara, huzurevindeki yaşlılarımıza, annesinin mahkumiyeti sebebiyle cezaevinde olan çocuklara; duyma, işitme ya da zihinsel engeli olan dostlarımıza, sevgi evindeki çocuklarımıza, sosyo-ekonomik düzeyi düşük çocuklarımızın akademik hayatına ve son olarak da gönüllülükle tanıştırdığımız liseli dostlarımıza dokunuyor. Yegane amacı gülümseyip gülümseyebilmek olan TDP gönüllüleri her geçen gün daha çok çalışarak sayısız hayata dokunuyor."
 };
 
 export const photosLink = "https://malikalbeik.com/";
