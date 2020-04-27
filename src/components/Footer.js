@@ -1,13 +1,13 @@
 // React
-import React, {Component} from "react";
+import React, { Component } from "react";
 
 // Bootstrap
-import {Container, Row, Col} from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 // Styled Components
 import styled from 'styled-components';
 
-import {sm} from '../breakpoints';
+import { sm } from '../breakpoints';
 
 // Components
 import SocialLinks from './SocialLinks';
@@ -23,7 +23,7 @@ class Footer extends Component {
               <SocialLinks />
             </Col>
             <Col sm={12} md={6}>
-              <Credits>Made with <Heart>❤</Heart> by <a href="https://malikalbeik.me/">Malik Albeik</a></Credits>
+              <Credits>Made with <Heart>❤</Heart> by <a href="https://malikalbeik.com/">Malik Albeik</a></Credits>
             </Col>
           </Row>
         </FooterInnerContainer>
